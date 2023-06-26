@@ -1,5 +1,15 @@
 function fetchBooks() {
   // To pass the tests, don't forget to return your fetch!
+  const apiUrl = 'https://anapioficeandfire.com/api/books';
+
+  return fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      renderBooks(data);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
   
 }
 
